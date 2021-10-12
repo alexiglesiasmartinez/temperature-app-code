@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif !important;
+}
+
+input {
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
+}
+
+::-moz-placeholder {
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* SMARTPHONES */
+  .app {
+    background-image: url("assets/weather.jpg");
+    background-size: cover;
+    background-position: bottom;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+  }
+
+  .app.cold {
+    background-image: url("assets/phone-cold-bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+  }
+
+  .app.warm {
+    background-image: url("assets/phone-warm-bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+  }
+
+  .visit-me {
+    display: none !important;
+  }
+}
+
+@media (min-width: 481px) {
+  /* TABLETS AND PCs */
+  .app {
+    background-image: url("assets/weather.jpg");
+    background-size: cover;
+    background-position: bottom;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+  }
+
+  .app.cold {
+    background-image: url("assets/cold-bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  .app.warm {
+    background-image: url("assets/warm-bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+  }
+
+  .visit-me {
+    position: absolute;
+    bottom: 5%;
+  }
+
+  .visit-me-link {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Spartan", sans-serif !important;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in;
+  }
+
+  .visit-me-link:hover {
+    padding-left: 30px;
+  }
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4)
+  );
+}
+
+.undefined {
+  color: white;
+  text-align: center;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 75px;
+}
+
+.search-box .search-bar {
+  width: 80%;
+  padding: 10px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: white;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.15);
+
+  color: black;
+  font-size: 20px;
+  transition: 0.4s ease;
+}
+
+.location-box .location {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50 70, 0.5);
+}
+
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50 70, 0.5);
+}
+
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-box .weather {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.weather::first-letter {
+  text-transform: capitalize;
+}
+
+/* Model */
+
+#myModal {
+  display: none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: red;
+  color: white;
+}
+
+.modal-body {
+  padding: 10px 10px 10px 10px;
+}
